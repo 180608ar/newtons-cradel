@@ -1,4 +1,4 @@
-class bob
+class Bob
 {
 	constructor(x,y,r)
 	{
@@ -13,7 +13,7 @@ class bob
 		this.y=y;
 		this.r=r
 		
-		this.body=Bodies.circle(this.x, this.y, (this.r)/2, options)
+		this.body=Bodies.circle(x, y, r/2, options)
 		World.add(world, this.body);
 
 	}

@@ -7,7 +7,7 @@ const Render = Matter.Render;
 const Constraint = Matter.Constraint;
 var bob1,bob2,bob3, bob4,bob5, roofObject
 var rope1,rope2,rope3, rope4,rope5;
-var world;
+var world,engine;
 
 
 function setup() {
@@ -19,19 +19,19 @@ function setup() {
 	world = engine.world;
 
 	roofObject=new roof(400,250,230,20);
-	bob1 = new bob(320,575,40);
-	bob2 = new bob(360,575,40);
-	bob3 = new bob(420,575,40);
-	bob4 = new bob(460,575,40);
-	bob5 = new bob(520,575,40);
+	Bob1 = new Bob(320,575,40);
+	Bob2 = new Bob(360,575,40);
+	Bob3 = new Bob(420,575,40);
+	Bob4 = new Bob(460,575,40);
+	Bob5 = new Bob(520,575,40);
 	
 	
 	
-	rope1=new rope(bob1.body,roofObject.body,-80, 0);
-	rope2=new rope(bob2.body,roofObject.body,-40, 0);
-	rope3=new rope(bob3.body,roofObject.body,-00, 0);
-	rope4=new rope(bob4.body,roofObject.body,+40, 0);
-	rope5=new rope(bob5.body,roofObject.body,+80, 0);
+	rope1=new rope(Bob1.body,roofObject.body,-80, 0);
+	rope2=new rope(Bob2.body,roofObject.body,-40, 0);
+	rope3=new rope(Bob3.body,roofObject.body,-00, 0);
+	rope4=new rope(Bob4.body,roofObject.body,+40, 0);
+	rope5=new rope(Bob5.body,roofObject.body,+80, 0);
 
 	
 	
@@ -44,7 +44,12 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(230);
-  roofObject.display();
+ 
+  Bob1.display();
+  Bob2.display();
+  Bob3.display();
+  Bob4.display();
+  Bob5.display();
 
   rope1.display();
   rope2.display();
@@ -52,20 +57,15 @@ function draw() {
   rope4.display();
   rope5.display();
 
-  bob1.display();
-  bob2.display();
-  bob3.display();
-  bob4.display();
-  bob5.display();
+  roofObject.display();
 
 }
 
-function keypressed(){
-    if(keyCode === UP_ARROW){
-      Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-45});
-    } 
-}
- 
+
+function keyPressed() { 
+	if (keyCode === UP_ARROW) 
+	{ Matter.Body.applyForce(Bob1.body,Bob1.body.position,{x:-50,y:-45}); } 
+} 
 
 
 
